@@ -3,10 +3,11 @@ require "google/cloud/logging"
 
 module LogsEngine
   def self.logs(text)
+  	credentials ="/home/ahsan/Downloads/api.json"
 		# Your Google Cloud Platform project ID
 		project_id = "cogent-anvil-256812"
 		# Instantiates a client
-		logging = Google::Cloud::Logging.new project: project_id
+		logging = Google::Cloud::Logging.new project: project_id, credentials: credentials
 		# Prepares a log entry
 		entry = logging.entry
 		# The data to log
